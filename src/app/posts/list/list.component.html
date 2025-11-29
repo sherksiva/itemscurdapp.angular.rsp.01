@@ -1,0 +1,36 @@
+<div id="Itemslist">
+  <!-- Header Start -->
+  <div class="header">
+    <div>
+      <a class="logo">ITEM LIST</a>
+    </div>
+    <div class="header-right">
+      <a class="active" [routerLink]="['/add']">ADD ITEM</a>
+    </div>
+  </div>
+  <!-- Header End -->
+  <div class="table_block">
+    <!-- Table Start -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="main_table_head" *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.title }}</td>
+          <td>
+            <button class="active" [routerLink]="['/edit', item.id]">Edit</button>
+            <button class="active" (click)="deleteItem(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Table End -->
+  </div>
+
+</div>

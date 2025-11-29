@@ -1,0 +1,28 @@
+<div id="updateItem">
+
+  <div class="header">
+      <div>
+        <a class="logo">UPDATE ITEM</a>
+      </div>
+      <div class="header-right">
+        <a class="active" [routerLink]="['/']">BACK TO HOME</a>
+      </div>
+  </div>
+  <form (ngSubmit)="updatePost()">
+    <div class="createItemForm">
+      <div class="form_item">
+        <label for="title">Title</label>
+        <br />
+        <input id="title" [(ngModel)]="item!.title" name="title" required />
+      </div>
+      <br >
+      <div class="form_item">
+        <label for="message">Message</label>
+        <textarea id="message" [(ngModel)]="item!.body" name="body" required></textarea>
+      </div>
+      <br />
+      <button class="pulse-button" type="submit">Update</button>
+    </div>
+  </form>
+</div>
+
